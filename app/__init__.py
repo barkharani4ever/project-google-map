@@ -26,7 +26,7 @@ login_manager = flask_login.LoginManager()
 def create_app():
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__)
-    if  os.environ.get("FLASK_ENV") == "production":
+    if os.environ.get("FLASK_ENV") == "production":
         app.config.from_object("app.config.ProductionConfig")
     elif os.environ.get("FLASK_ENV") == "development":
         app.config.from_object("app.config.DevelopmentConfig")
